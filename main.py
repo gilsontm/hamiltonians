@@ -41,9 +41,9 @@ def main():
 
     #                    q0  q1  q2  q3
     HB = (tensor_product(IN,  I,  I,  I) +
-          tensor_product( I, IN,  I,  I) +
-          tensor_product( I,  I, IN,  I) +
-          tensor_product( I,  I,  I, IN))
+           tensor_product( I, IN,  I,  I) +
+           tensor_product( I,  I, IN,  I) +
+           tensor_product( I,  I,  I, IN))
 
     #                    q0  q1  q2  q3
     HP = (tensor_product(P1, P1,  I, P0) +
