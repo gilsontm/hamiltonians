@@ -16,11 +16,6 @@ def tensor_product(M1, *args):
         return M1
     return np.kron(M1, tensor_product(*args))
 
-def plot(H, t):
-    e = np.linalg.eigvalsh(H)
-    t = len(e) * [t]
-    plt.scatter(t, e, s=1, c="r")
-
 def apply_to_bit(M, i, n):
     pre = [I] * i
     pos = [I] * ((n - 1) - i)
@@ -51,22 +46,27 @@ def main():
     HP = HP - tensor_product(partial_x, partial_y)
     HP = HP ** 2
 
-    # HB = np.zeros((2**n, 2**n))
-    # for i in range(n):
-    #     HB += (constants.hbar * apply_to_bit(X, i, n))
-
-    HB = (tensor_product(IN,  I,  I) +
-          tensor_product( I, IN,  I) +
-          tensor_product( I,  I, IN))
+    HB = np.zeros((2**n, 2**n))
+    for i in range(n):
+        HB += apply_to_bit((I - X) / 2, i, n)
 
     B = lambda s: np.sin(np.pi/2 * (np.sin(np.pi * s / 2) ** 2)) ** 2
     A = lambda s: 1 - B(s)
     H = lambda s: (A(s) * HB) + (B(s) * HP)
 
     t = 0
+    ts = []
+    eigenvalues = []
     while t <= 1:
-        plot(H(t), t)
+        eigenvalues.append(np.linalg.eigvalsh(H(t)))
+        ts.append(t)
         t += 0.01
+
+    eigenvalues = np.stack(eigenvalues, axis=1)
+    for i, eigenvalue in enumerate(eigenvalues):
+        plt.plot(ts, eigenvalue, c="r" if i == 0 else "b")
+    plt.xlabel("Tempo")
+    plt.ylabel("Energia")
     plt.show()
 
 if __name__ == "__main__":
