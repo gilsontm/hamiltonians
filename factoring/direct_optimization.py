@@ -1,26 +1,9 @@
+import sys; sys.path.append("..")
+
 import numpy as np
-from scipy import constants
+from utils.utils import *
 import matplotlib.pyplot as plt
 from number_of_bits import number_of_bits_for_x, number_of_bits_for_y
-
-I = np.eye(2)
-X = np.array([[0, 1],
-              [1, 0]])
-Z = np.array([[1, 0],
-              [0,-1]])
-
-IN = (I - X) / 2
-
-def tensor_product(M1, *args):
-    if len(args) == 0:
-        return M1
-    return np.kron(M1, tensor_product(*args))
-
-def apply_to_bit(M, i, n):
-    pre = [I] * i
-    pos = [I] * ((n - 1) - i)
-    sequence = pre + [M] + pos
-    return tensor_product(*sequence)
 
 def main():
     N = 21
@@ -36,11 +19,11 @@ def main():
 
     partial_x = I_nx
     for l in range(nx):
-        partial_x += (2**(l+1) * (I_nx - apply_to_bit(Z, l, nx)) / 2)
+        partial_x += (2**(l+1) * apply_to_bit((I - Z) / 2, l, nx))
 
     partial_y = I_ny
     for m in range(ny):
-        partial_y += (2**(m+1) * (I_ny - apply_to_bit(Z, m, ny)) / 2)
+        partial_y += (2**(m+1) * apply_to_bit((I - Z) / 2, m, ny))
 
     HP = N * I_n
     HP = HP - tensor_product(partial_x, partial_y)
@@ -48,7 +31,7 @@ def main():
 
     HB = np.zeros((2**n, 2**n))
     for i in range(n):
-        HB += apply_to_bit((I - X) / 2, i, n)
+        HB += apply_to_bit(IN, i, n)
 
     B = lambda s: np.sin(np.pi/2 * (np.sin(np.pi * s / 2) ** 2)) ** 2
     A = lambda s: 1 - B(s)

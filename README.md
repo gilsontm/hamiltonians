@@ -1,2 +1,3 @@
-# adiabatic-3-sat
-Simple 3-SAT example of Adiabatic Evolution.
+# Hamiltonians
+
+Inclui códigos de exemplo para geração de Hamiltonianos e evolução adiabática.

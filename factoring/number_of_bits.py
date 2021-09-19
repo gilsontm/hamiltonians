@@ -1,4 +1,7 @@
+import sys; sys.path.append("..")
+
 import numpy as np
+from utils import *
 import matplotlib.pyplot as plt
 
 
@@ -20,7 +23,7 @@ def main():
     XsYs = Xs + Ys
     Ls = np.log2(Ns)
 
-    fig, ax = plt.subplots()
+    _, ax = plt.subplots()
     ax.ticklabel_format(useOffset=False, style="plain")
     ax.plot(Ns, XsYs, color="y")
     ax.plot(Ns, Xs, color="b")
@@ -30,8 +33,6 @@ def main():
     ax.set_ylabel("number of bits")
     ax.legend(["total bits", "bits for x", "bits for y", "log2(N)"])
     plt.show()
-
-
 
 if __name__ == "__main__":
     main()

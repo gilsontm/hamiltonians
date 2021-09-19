@@ -1,24 +1,12 @@
+import sys; sys.path.append("..")
+
 import numpy as np
-from ket import *
+from utils.ket import *
+from utils.utils import *
 import matplotlib.pyplot as plt
-from numpy.lib import NumpyVersion
-
-
-I = np.eye(2)
-X = np.array([[0, 1],
-              [1, 0]])
-Z = np.array([[1, 0],
-              [0,-1]])
 
 P1 =      (I - Z) / 2        # punishes ket1
 P0 = (I - (I - Z) / 2)       # punishes ket0
-
-IN = (I - X) / 2
-
-def tensor_product(M1, *args):
-    if len(args) == 0:
-        return M1
-    return np.kron(M1, tensor_product(*args))
 
 def plot(H, t):
     e = np.linalg.eigvalsh(H)
