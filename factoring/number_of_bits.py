@@ -1,7 +1,6 @@
-import sys; sys.path.append("..")
-
+import __init__
 import numpy as np
-from utils import *
+from utils.utils import *
 import matplotlib.pyplot as plt
 
 

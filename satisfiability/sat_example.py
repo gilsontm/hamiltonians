@@ -1,17 +1,11 @@
-import sys; sys.path.append("..")
-
+import __init__
 import numpy as np
-from utils.ket import *
 from utils.utils import *
-import matplotlib.pyplot as plt
 
 P1 =      (I - Z) / 2        # punishes ket1
 P0 = (I - (I - Z) / 2)       # punishes ket0
 
-def plot(H, t):
-    e = np.linalg.eigvalsh(H)
-    t = len(e) * [t]
-    plt.scatter(t, e, s=1, c="r")
+IN = (I - X) / 2
 
 def main():
                                      # 0 1 2 3
@@ -24,8 +18,6 @@ def main():
     ' ( q0 v ¬q1 v        q3) &&  '  # 0 1 _ 0        = 01_0
     ' ( q0 v  q1 v ¬q2      ) &&  '  # 0 0 1 _        = 001_
     ' ( q0 v  q1 v  q2      )     '  # 0 0 0 _        = 000_
-
-    I = np.eye(2)
 
     #                    q0  q1  q2  q3
     HB = (tensor_product(IN,  I,  I,  I) +
@@ -43,13 +35,7 @@ def main():
           tensor_product(P0, P0, P1,  I) +
           tensor_product(P0, P0, P0,  I))
 
-    H = lambda s: ((1-s) * HB) + (s * HP)
-
-    t = 0
-    while t <= 1:
-        plot(H(t), t)
-        t += 0.01
-    plt.show()
+    evolve(HB, HP)
 
 if __name__ == "__main__":
     main()

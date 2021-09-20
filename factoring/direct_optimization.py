@@ -1,9 +1,9 @@
-import sys; sys.path.append("..")
-
+import __init__
 import numpy as np
 from utils.utils import *
 import matplotlib.pyplot as plt
 from number_of_bits import number_of_bits_for_x, number_of_bits_for_y
+
 
 def main():
     N = 21
@@ -31,26 +31,11 @@ def main():
 
     HB = np.zeros((2**n, 2**n))
     for i in range(n):
-        HB += apply_to_bit(IN, i, n)
+        HB += apply_to_bit((I - X) / 2, i, n)
 
-    B = lambda s: np.sin(np.pi/2 * (np.sin(np.pi * s / 2) ** 2)) ** 2
-    A = lambda s: 1 - B(s)
-    H = lambda s: (A(s) * HB) + (B(s) * HP)
+    f = lambda s: np.sin(np.pi/2 * (np.sin(np.pi * s / 2) ** 2)) ** 2
 
-    t = 0
-    ts = []
-    eigenvalues = []
-    while t <= 1:
-        eigenvalues.append(np.linalg.eigvalsh(H(t)))
-        ts.append(t)
-        t += 0.01
-
-    eigenvalues = np.stack(eigenvalues, axis=1)
-    for i, eigenvalue in enumerate(eigenvalues):
-        plt.plot(ts, eigenvalue, c="r" if i == 0 else "b")
-    plt.xlabel("Tempo")
-    plt.ylabel("Energia")
-    plt.show()
+    evolve(HB, HP, f)
 
 if __name__ == "__main__":
     main()
