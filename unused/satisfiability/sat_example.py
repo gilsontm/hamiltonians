@@ -37,5 +37,46 @@ def main():
 
     evolve(HB, HP)
 
+
+def other():
+
+    HP1 = (tensor_product(P0, P0, P0,  I) +
+           tensor_product(P1,  I, P0, P0) +
+           tensor_product( I, P0, P1, P1))
+
+    HP2 = (  tensor_product( I,  I,  I,  I) # part 1
+           - tensor_product(P1,  I,  I,  I)
+           - tensor_product( I, P1,  I,  I)
+           + tensor_product(P1, P1,  I,  I)
+           - tensor_product( I,  I, P1,  I)
+           + tensor_product(P1,  I, P1,  I)
+           + tensor_product( I, P1, P1,  I)
+           - tensor_product(P1, P1, P1,  I)
+
+           + tensor_product(P1,  I,  I,  I) # part 2
+           - tensor_product(P1,  I, P1,  I)
+           - tensor_product(P1,  I,  I, P1)
+           + tensor_product(P1,  I, P1, P1)
+
+           + tensor_product( I,  I, P1, P1) # part 3
+           - tensor_product( I, P1, P1, P1))
+
+    import ipdb; ipdb.set_trace(context=10);
+
+def simpler():
+    #                    q0  q1  q2  q3
+    HB = (tensor_product(IN,  I,  I,  I) +
+          tensor_product( I, IN,  I,  I) +
+          tensor_product( I,  I, IN,  I) +
+          tensor_product( I,  I,  I, IN))
+
+    #                    q0  q1  q2  q3
+    HP = (tensor_product(P0, P0, P0,  I) +
+          tensor_product( I, P1, P0, P0))
+
+    evolve(HB, HP)
+
 if __name__ == "__main__":
-    main()
+#     main()
+#     other()
+    simpler()
