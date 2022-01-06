@@ -1,3 +1,4 @@
+import sympy
 import numpy as np
 from utils.utils import number_of_bits_for_x, number_of_bits_for_y
 
@@ -34,14 +35,13 @@ class Term:
         copy.mult *= -1
         return self.__add__(copy)
 
-    def full_add(self, other):
-        pass
-
     def copy(self):
         return Term(self.vars.copy(), self.exp2, self.mult)
 
-    def variables_string(self, nx=None, letters=False, latex=False):
+    def variables_string(self, nx=None, letters=False, latex=False, show_products=False):
         if letters:
+            if show_products:
+                return "*".join([chr(96+v) for v in self.vars])
             return "".join([chr(96+v) for v in self.vars])
         if nx is not None:
             if latex:
@@ -64,11 +64,13 @@ class Term:
                 return "+"
         return f"{self.mult:+d}"
 
-    def as_string(self, nx=None, letters=False, latex=False):
+    def as_string(self, nx=None, letters=False, latex=False, show_products=False):
         if self.mult == 0:
             return "+0"
-        vars = self.variables_string(nx, letters, latex)
+        vars = self.variables_string(nx, letters, latex, show_products)
         if vars:
+            if show_products:
+                return f"{self.coefficient_string()}*{vars}"
             return f"{self.coefficient_string()}{vars}"
         return f"{self.coefficient_string(True)}"
 
@@ -93,8 +95,10 @@ class ComposedTerm:
         assert(self.vars == term.vars)
         self.terms.append(term)
 
-    def variables_string(self, nx=None, letters=False, latex=False):
+    def variables_string(self, nx=None, letters=False, latex=False, show_products=False):
         if letters:
+            if show_products:
+                return "*".join([chr(96+v) for v in self.vars])
             return "".join([chr(96+v) for v in self.vars])
         if nx is not None:
             if latex:
@@ -104,12 +108,14 @@ class ComposedTerm:
             return "".join([f"b_{{v}}" for v in self.vars])
         return "".join([f"b{v}" for v in self.vars])
 
-    def as_string(self, nx=None, letters=False, latex=False):
+    def as_string(self, nx=None, letters=False, latex=False, show_products=False):
         if len(self.terms) == 1:
-            return self.terms[0].as_string(nx, letters, latex)
+            return self.terms[0].as_string(nx, letters, latex, show_products)
         coef = f"+({''.join(term.coefficient_string(True) for term in self.terms)})"
-        vars = self.variables_string(nx, letters, latex)
+        vars = self.variables_string(nx, letters, latex, show_products)
         if vars:
+            if show_products:
+                return f"{coef}*{vars}"
             return f"{coef}{vars}"
         return f"{coef}"
 
@@ -124,13 +130,31 @@ class DirectHamiltonian:
         self.nx = int(number_of_bits_for_x(N))
         self.ny = int(number_of_bits_for_y(N))
 
-    def expanded(self):
+    def from_function(self):
+        N = self.N
+        nx = self.nx
+        ny = self.ny
+
+        xs = [Term()]; ys = [Term()]
+        for x in range(1, nx+1):
+            xs.append(Term({x}, x))
+        for y in range(1, ny+1):
+            ys.append(Term({y+nx}, y))
+
+        xs.reverse()
+        ys.reverse()
+
+        x = "".join([t.as_string(letters=True, show_products=True) for t in xs])
+        y = "".join([t.as_string(letters=True, show_products=True) for t in ys])
+        return f"({N} - ({x})*({y}))^2"
+
+    def from_expansion(self):
         nx = self.nx
         ny = self.ny
 
         xs = []; ys = []
         for x in range(1, nx+1):
-            xs.append(Term({x}, x, -1))
+            xs.append(Term({x}, x))
         for y in range(1, ny+1):
             ys.append(Term({y+nx}, y))
 
@@ -148,7 +172,7 @@ class DirectHamiltonian:
             for term2 in terms:
                 expression.append(term1 * term2)
 
-        expression.sort(key=lambda t: sorted(list(t.vars)))
+        expression.sort(key=lambda t: [len(t.vars)] + sorted(list(t.vars)))
 
         simplified = []
         term = expression[0]
@@ -169,11 +193,81 @@ class DirectHamiltonian:
                 final.append(term)
                 term = ComposedTerm(simplified[i])
         final.append(term)
-        return final
+        return self.expression_to_string(final)
+
+    def from_formula(self):
+        N = self.N
+        nx = self.nx
+        ny = self.ny
+        expression = []
+        for i in range(1, nx+1):
+            for j in range(i+1, nx+1):
+                for k in range(1, ny+1):
+                    for l in range(k+1, ny+1):
+                        term = Term({i, j, k+nx, l+nx}, (i+j+k+l+2))
+                        expression.append(term)
+        for i in range(1, nx+1):
+            for j in range(i+1, nx+1):
+                for k in range(1, ny+1):
+                    term1 = Term({i, j, k+nx}, (i+j+2*k+1))
+                    term2 = Term({i, j, k+nx}, (i+j+k+2))
+                    term = ComposedTerm(term1, term2)
+                    expression.append(term)
+        for i in range(1, nx+1):
+            for j in range(1, ny+1):
+                for k in range(j+1, ny+1):
+                    term1 = Term({i, j+nx, k+nx}, (2*i+j+k+1))
+                    term2 = Term({i, j+nx, k+nx}, (i+j+k+2))
+                    term = ComposedTerm(term1, term2)
+                    expression.append(term)
+        for i in range(1, nx+1):
+            for j in range(1, ny+1):
+                term1 = Term({i, j+nx}, (2*i+2*j))
+                term2 = Term({i, j+nx}, (2*i+j+1))
+                term3 = Term({i, j+nx}, (i+2*j+1))
+                term4 = Term({i, j+nx}, (i+j+1), (2-N))
+                term = ComposedTerm(term1, term2, term3, term4)
+                expression.append(term)
+        for i in range(1, nx+1):
+            for j in range(i+1, nx+1):
+                term = Term({i, j}, (i+j+1))
+                expression.append(term)
+        for i in range(1, ny+1):
+            for j in range(i+1, ny+1):
+                term = Term({i+nx, j+nx}, (i+j+1))
+                expression.append(term)
+        for i in range(1, nx+1):
+            term1 = Term({i}, (2*i))
+            term2 = Term({i}, (i+1), (1-N))
+            term = ComposedTerm(term1, term2)
+            expression.append(term)
+        for i in range(1, ny+1):
+            term1 = Term({i+nx}, (2*i))
+            term2 = Term({i+nx}, (i+1), (1-N))
+            term = ComposedTerm(term1, term2)
+            expression.append(term)
+        expression.append(Term(multiplier=(N-1)**2))
+        expression.sort(key=lambda t: [len(t.vars)] + sorted(list(t.vars)))
+        return self.expression_to_string(expression)
+
+    def expression_to_string(self, expression):
+        return "".join([t.as_string(letters=True, show_products=True) for t in expression])
+
+    def as_string(self):
+        return f"H: N={self.N}, n={self.n}, nx={self.nx}, ny={self.ny}"
+
+    def __str__(self):
+        return self.as_string()
 
 if __name__ == "__main__":
-    hamiltonian = DirectHamiltonian(120)
-    expression = hamiltonian.expanded()
-    for term in expression:
-        print(term.as_string(letters=True), end="")
-    print()
+    for N in range(11, 55, 2):
+        hamiltonian = DirectHamiltonian(N)
+        exp0 = hamiltonian.from_function()
+        exp0 = sympy.expand(exp0)
+        exp0 = str(exp0).replace("**2", "")
+        exp0 = str(sympy.simplify(exp0))
+        exp1 = str(sympy.simplify(hamiltonian.from_expansion()))
+        exp2 = str(sympy.simplify(hamiltonian.from_formula()))
+        assert(exp0 == exp1 and exp0 == exp2)
+        print(str(hamiltonian))
+        print(exp2)
