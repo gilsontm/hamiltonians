@@ -22,7 +22,7 @@ class AbstractHamiltonian:
         return self.as_string()
 
     def to_string(self, expression):
-        return "".join([t.as_string(self.nx, self.letters, self.latex, self.show_products) for t in expression])
+        return "".join([t.as_string(self.nx, self.ny, self.letters, self.latex, self.show_products) for t in expression])
 
     def with_parameters(self, letters=False, latex=False, show_products=False):
         self.letters = letters
