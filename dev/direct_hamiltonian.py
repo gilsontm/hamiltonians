@@ -22,8 +22,8 @@ class DirectHamiltonian(AbstractHamiltonian):
         xs.reverse()
         ys.reverse()
 
-        x = "".join([t.as_string(letters=True, show_products=True) for t in xs])
-        y = "".join([t.as_string(letters=True, show_products=True) for t in ys])
+        x = self.to_string(xs)
+        y = self.to_string(ys)
         return f"({N} - ({x})*({y}))^2"
 
     def from_expansion(self):
