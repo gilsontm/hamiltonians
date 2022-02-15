@@ -147,7 +147,6 @@ class DirectHamiltonian(AbstractHamiltonian):
                                  Term({j, k+nx},    exp2),
                                  Term({j, l+nx},    exp2),
                                  Term({k+nx, l+nx}, exp2),
-                                 Term({k+nx, l+nx}, exp2),
                                  Term({i, b},       exp2, -2),
                                  Term({j, b},       exp2, -2),
                                  Term({k+nx, b},    exp2, -2),
@@ -220,6 +219,7 @@ class DirectHamiltonian(AbstractHamiltonian):
         N = self.N
         nx = self.nx
         ny = self.ny
+        assert(nx + ny >= 4)
         xxyy = []
         xxy = []
         xyy = []

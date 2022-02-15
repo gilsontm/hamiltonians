@@ -13,11 +13,11 @@ class AbstractTerm:
             return join.join([chr(96+v) for v in self.vars])
         if nx is not None and ny is not None:
             if latex:
-                return join.join([f"x_{{v}}" if v <= nx else (f"y_{{v-nx}}" if v <= (nx+ny) else f"b_{{v-nx-ny}}") for v in self.vars])
-            return join.join([f"x{v}" if v <= nx else (f"y{v-nx}" if v <= (nx+ny) else f"b{v-nx-ny}") for v in self.vars])
+                return join.join([f"x_{{v:02d}}" if v <= nx else (f"y_{{v-nx:02d}}" if v <= (nx+ny) else f"b_{{v-nx-ny:02d}}") for v in self.vars])
+            return join.join([f"x{v:02d}" if v <= nx else (f"y{v-nx:02d}" if v <= (nx+ny) else f"b{v-nx-ny:02d}") for v in self.vars])
         if latex:
-            return join.join([f"b_{{v}}" for v in self.vars])
-        return join.join([f"b{v}" for v in self.vars])
+            return join.join([f"b_{{v:02d}}" for v in self.vars])
+        return join.join([f"b{v:02d}" for v in self.vars])
 
     def __str__(self):
         return self.as_string()
