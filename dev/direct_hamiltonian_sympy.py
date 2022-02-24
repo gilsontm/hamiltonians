@@ -186,6 +186,9 @@ class DirectHamiltonianSympy(AbstractHamiltonian):
         nx = self.nx
         ny = self.ny
 
+        assert(nx >= 2)
+        assert(ny >= 2)
+
         m = 0
         m += 1
         term1 = f"+(3*2^{1+2+1+2+2}+(2^{1+2+2*1+1}+2^{1+2+1+2})+(2^{1+2+2*2+1}+2^{1+2+2+2})+(2^{2*1+1+2+1}+2^{1+1+2+2})+(2^{2*2+1+2+1}+2^{2+1+2+2}))*b{m:02d}"
