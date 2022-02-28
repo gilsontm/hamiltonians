@@ -1,0 +1,776 @@
+[TEST] Original vs. Alternate Form
+>> from N = 25 through N = 1024
+>> passed for N =   25
+>> passed for N =   27
+>> passed for N =   29
+>> passed for N =   31
+>> passed for N =   33
+>> passed for N =   35
+>> passed for N =   37
+>> passed for N =   39
+>> passed for N =   41
+>> passed for N =   43
+>> passed for N =   45
+>> passed for N =   47
+>> passed for N =   49
+>> passed for N =   51
+>> passed for N =   53
+>> passed for N =   55
+>> passed for N =   57
+>> passed for N =   59
+>> passed for N =   61
+>> passed for N =   63
+>> passed for N =   65
+>> passed for N =   67
+>> passed for N =   69
+>> passed for N =   71
+>> passed for N =   73
+>> passed for N =   75
+>> passed for N =   77
+>> passed for N =   79
+>> passed for N =   81
+>> passed for N =   83
+>> passed for N =   85
+>> passed for N =   87
+>> passed for N =   89
+>> passed for N =   91
+>> passed for N =   93
+>> passed for N =   95
+>> passed for N =   97
+>> passed for N =   99
+>> passed for N =  101
+>> passed for N =  103
+>> passed for N =  105
+>> passed for N =  107
+>> passed for N =  109
+>> passed for N =  111
+>> passed for N =  113
+>> passed for N =  115
+>> passed for N =  117
+>> passed for N =  119
+>> passed for N =  121
+>> passed for N =  123
+>> passed for N =  125
+>> passed for N =  127
+>> passed for N =  129
+>> passed for N =  131
+>> passed for N =  133
+>> passed for N =  135
+>> passed for N =  137
+>> passed for N =  139
+>> passed for N =  141
+>> passed for N =  143
+>> passed for N =  145
+>> passed for N =  147
+>> passed for N =  149
+>> passed for N =  151
+>> passed for N =  153
+>> passed for N =  155
+>> passed for N =  157
+>> passed for N =  159
+>> passed for N =  161
+>> passed for N =  163
+>> passed for N =  165
+>> passed for N =  167
+>> passed for N =  169
+>> passed for N =  171
+>> passed for N =  173
+>> passed for N =  175
+>> passed for N =  177
+>> passed for N =  179
+>> passed for N =  181
+>> passed for N =  183
+>> passed for N =  185
+>> passed for N =  187
+>> passed for N =  189
+>> passed for N =  191
+>> passed for N =  193
+>> passed for N =  195
+>> passed for N =  197
+>> passed for N =  199
+>> passed for N =  201
+>> passed for N =  203
+>> passed for N =  205
+>> passed for N =  207
+>> passed for N =  209
+>> passed for N =  211
+>> passed for N =  213
+>> passed for N =  215
+>> passed for N =  217
+>> passed for N =  219
+>> passed for N =  221
+>> passed for N =  223
+>> passed for N =  225
+>> passed for N =  227
+>> passed for N =  229
+>> passed for N =  231
+>> passed for N =  233
+>> passed for N =  235
+>> passed for N =  237
+>> passed for N =  239
+>> passed for N =  241
+>> passed for N =  243
+>> passed for N =  245
+>> passed for N =  247
+>> passed for N =  249
+>> passed for N =  251
+>> passed for N =  253
+>> passed for N =  255
+>> passed for N =  257
+>> passed for N =  259
+>> passed for N =  261
+>> passed for N =  263
+>> passed for N =  265
+>> passed for N =  267
+>> passed for N =  269
+>> passed for N =  271
+>> passed for N =  273
+>> passed for N =  275
+>> passed for N =  277
+>> passed for N =  279
+>> passed for N =  281
+>> passed for N =  283
+>> passed for N =  285
+>> passed for N =  287
+>> passed for N =  289
+>> passed for N =  291
+>> passed for N =  293
+>> passed for N =  295
+>> passed for N =  297
+>> passed for N =  299
+>> passed for N =  301
+>> passed for N =  303
+>> passed for N =  305
+>> passed for N =  307
+>> passed for N =  309
+>> passed for N =  311
+>> passed for N =  313
+>> passed for N =  315
+>> passed for N =  317
+>> passed for N =  319
+>> passed for N =  321
+>> passed for N =  323
+>> passed for N =  325
+>> passed for N =  327
+>> passed for N =  329
+>> passed for N =  331
+>> passed for N =  333
+>> passed for N =  335
+>> passed for N =  337
+>> passed for N =  339
+>> passed for N =  341
+>> passed for N =  343
+>> passed for N =  345
+>> passed for N =  347
+>> passed for N =  349
+>> passed for N =  351
+>> passed for N =  353
+>> passed for N =  355
+>> passed for N =  357
+>> passed for N =  359
+>> passed for N =  361
+>> passed for N =  363
+>> passed for N =  365
+>> passed for N =  367
+>> passed for N =  369
+>> passed for N =  371
+>> passed for N =  373
+>> passed for N =  375
+>> passed for N =  377
+>> passed for N =  379
+>> passed for N =  381
+>> passed for N =  383
+>> passed for N =  385
+>> passed for N =  387
+>> passed for N =  389
+>> passed for N =  391
+>> passed for N =  393
+>> passed for N =  395
+>> passed for N =  397
+>> passed for N =  399
+>> passed for N =  401
+>> passed for N =  403
+>> passed for N =  405
+>> passed for N =  407
+>> passed for N =  409
+>> passed for N =  411
+>> passed for N =  413
+>> passed for N =  415
+>> passed for N =  417
+>> passed for N =  419
+>> passed for N =  421
+>> passed for N =  423
+>> passed for N =  425
+>> passed for N =  427
+>> passed for N =  429
+>> passed for N =  431
+>> passed for N =  433
+>> passed for N =  435
+>> passed for N =  437
+>> passed for N =  439
+>> passed for N =  441
+>> passed for N =  443
+>> passed for N =  445
+>> passed for N =  447
+>> passed for N =  449
+>> passed for N =  451
+>> passed for N =  453
+>> passed for N =  455
+>> passed for N =  457
+>> passed for N =  459
+>> passed for N =  461
+>> passed for N =  463
+>> passed for N =  465
+>> passed for N =  467
+>> passed for N =  469
+>> passed for N =  471
+>> passed for N =  473
+>> passed for N =  475
+>> passed for N =  477
+>> passed for N =  479
+>> passed for N =  481
+>> passed for N =  483
+>> passed for N =  485
+>> passed for N =  487
+>> passed for N =  489
+>> passed for N =  491
+>> passed for N =  493
+>> passed for N =  495
+>> passed for N =  497
+>> passed for N =  499
+>> passed for N =  501
+>> passed for N =  503
+>> passed for N =  505
+>> passed for N =  507
+>> passed for N =  509
+>> passed for N =  511
+>> passed for N =  513
+>> passed for N =  515
+>> passed for N =  517
+>> passed for N =  519
+>> passed for N =  521
+>> passed for N =  523
+>> passed for N =  525
+>> passed for N =  527
+>> passed for N =  529
+>> passed for N =  531
+>> passed for N =  533
+>> passed for N =  535
+>> passed for N =  537
+>> passed for N =  539
+>> passed for N =  541
+>> passed for N =  543
+>> passed for N =  545
+>> passed for N =  547
+>> passed for N =  549
+>> passed for N =  551
+>> passed for N =  553
+>> passed for N =  555
+>> passed for N =  557
+>> passed for N =  559
+>> passed for N =  561
+>> passed for N =  563
+>> passed for N =  565
+>> passed for N =  567
+>> passed for N =  569
+>> passed for N =  571
+>> passed for N =  573
+>> passed for N =  575
+>> passed for N =  577
+>> passed for N =  579
+>> passed for N =  581
+>> passed for N =  583
+>> passed for N =  585
+>> passed for N =  587
+>> passed for N =  589
+>> passed for N =  591
+>> passed for N =  593
+>> passed for N =  595
+>> passed for N =  597
+>> passed for N =  599
+>> passed for N =  601
+>> passed for N =  603
+>> passed for N =  605
+>> passed for N =  607
+>> passed for N =  609
+>> passed for N =  611
+>> passed for N =  613
+>> passed for N =  615
+>> passed for N =  617
+>> passed for N =  619
+>> passed for N =  621
+>> passed for N =  623
+>> passed for N =  625
+>> passed for N =  627
+>> passed for N =  629
+>> passed for N =  631
+>> passed for N =  633
+>> passed for N =  635
+>> passed for N =  637
+>> passed for N =  639
+>> passed for N =  641
+>> passed for N =  643
+>> passed for N =  645
+>> passed for N =  647
+>> passed for N =  649
+>> passed for N =  651
+>> passed for N =  653
+>> passed for N =  655
+>> passed for N =  657
+>> passed for N =  659
+>> passed for N =  661
+>> passed for N =  663
+>> passed for N =  665
+>> passed for N =  667
+>> passed for N =  669
+>> passed for N =  671
+>> passed for N =  673
+>> passed for N =  675
+>> passed for N =  677
+>> passed for N =  679
+>> passed for N =  681
+>> passed for N =  683
+>> passed for N =  685
+>> passed for N =  687
+>> passed for N =  689
+>> passed for N =  691
+>> passed for N =  693
+>> passed for N =  695
+>> passed for N =  697
+>> passed for N =  699
+>> passed for N =  701
+>> passed for N =  703
+>> passed for N =  705
+>> passed for N =  707
+>> passed for N =  709
+>> passed for N =  711
+>> passed for N =  713
+>> passed for N =  715
+>> passed for N =  717
+>> passed for N =  719
+>> passed for N =  721
+>> passed for N =  723
+>> passed for N =  725
+>> passed for N =  727
+>> passed for N =  729
+>> passed for N =  731
+>> passed for N =  733
+>> passed for N =  735
+>> passed for N =  737
+>> passed for N =  739
+>> passed for N =  741
+>> passed for N =  743
+>> passed for N =  745
+>> passed for N =  747
+>> passed for N =  749
+>> passed for N =  751
+>> passed for N =  753
+>> passed for N =  755
+>> passed for N =  757
+>> passed for N =  759
+>> passed for N =  761
+>> passed for N =  763
+>> passed for N =  765
+>> passed for N =  767
+>> passed for N =  769
+>> passed for N =  771
+>> passed for N =  773
+>> passed for N =  775
+>> passed for N =  777
+>> passed for N =  779
+>> passed for N =  781
+>> passed for N =  783
+>> passed for N =  785
+>> passed for N =  787
+>> passed for N =  789
+>> passed for N =  791
+>> passed for N =  793
+>> passed for N =  795
+>> passed for N =  797
+>> passed for N =  799
+>> passed for N =  801
+>> passed for N =  803
+>> passed for N =  805
+>> passed for N =  807
+>> passed for N =  809
+>> passed for N =  811
+>> passed for N =  813
+>> passed for N =  815
+>> passed for N =  817
+>> passed for N =  819
+>> passed for N =  821
+>> passed for N =  823
+>> passed for N =  825
+>> passed for N =  827
+>> passed for N =  829
+>> passed for N =  831
+>> passed for N =  833
+>> passed for N =  835
+>> passed for N =  837
+>> passed for N =  839
+>> passed for N =  841
+>> passed for N =  843
+>> passed for N =  845
+>> passed for N =  847
+>> passed for N =  849
+>> passed for N =  851
+>> passed for N =  853
+>> passed for N =  855
+>> passed for N =  857
+>> passed for N =  859
+>> passed for N =  861
+>> passed for N =  863
+>> passed for N =  865
+>> passed for N =  867
+>> passed for N =  869
+>> passed for N =  871
+>> passed for N =  873
+>> passed for N =  875
+>> passed for N =  877
+>> passed for N =  879
+>> passed for N =  881
+>> passed for N =  883
+>> passed for N =  885
+>> passed for N =  887
+>> passed for N =  889
+>> passed for N =  891
+>> passed for N =  893
+>> passed for N =  895
+>> passed for N =  897
+>> passed for N =  899
+>> passed for N =  901
+>> passed for N =  903
+>> passed for N =  905
+>> passed for N =  907
+>> passed for N =  909
+>> passed for N =  911
+>> passed for N =  913
+>> passed for N =  915
+>> passed for N =  917
+>> passed for N =  919
+>> passed for N =  921
+>> passed for N =  923
+>> passed for N =  925
+>> passed for N =  927
+>> passed for N =  929
+>> passed for N =  931
+>> passed for N =  933
+>> passed for N =  935
+>> passed for N =  937
+>> passed for N =  939
+>> passed for N =  941
+>> passed for N =  943
+>> passed for N =  945
+>> passed for N =  947
+>> passed for N =  949
+>> passed for N =  951
+>> passed for N =  953
+>> passed for N =  955
+>> passed for N =  957
+>> passed for N =  959
+>> passed for N =  961
+>> passed for N =  963
+>> passed for N =  965
+>> passed for N =  967
+>> passed for N =  969
+>> passed for N =  971
+>> passed for N =  973
+>> passed for N =  975
+>> passed for N =  977
+>> passed for N =  979
+>> passed for N =  981
+>> passed for N =  983
+>> passed for N =  985
+>> passed for N =  987
+>> passed for N =  989
+>> passed for N =  991
+>> passed for N =  993
+>> passed for N =  995
+>> passed for N =  997
+>> passed for N =  999
+>> passed for N = 1001
+>> passed for N = 1003
+>> passed for N = 1005
+>> passed for N = 1007
+>> passed for N = 1009
+>> passed for N = 1011
+>> passed for N = 1013
+>> passed for N = 1015
+>> passed for N = 1017
+>> passed for N = 1019
+>> passed for N = 1021
+>> passed for N = 1023
+>> passed all!
+[TEST] Ishikawa Minimization
+>> from N = 25 through N = 50
+>> at N =   25: energy =   0, x =   5, y =   5
+>> at N =   27: energy =   0, x =   3, y =   9
+>> at N =   29: energy =   4, x =   3, y =   9
+>> at N =   31: energy =   4, x =   3, y =  11
+>> at N =   33: energy =   0, x =   3, y =  11
+>> at N =   35: energy =   0, x =   7, y =   5
+>> at N =   37: energy =   4, x =   7, y =   5
+>> at N =   39: energy =   0, x =   3, y =  13
+>> at N =   41: energy =   4, x =   3, y =  13
+>> at N =   43: energy =   4, x =   5, y =   9
+>> at N =   45: energy =   0, x =   5, y =   9
+>> at N =   47: energy =   4, x =   7, y =   7
+>> at N =   49: energy =   0, x =   7, y =   7
+>> passed all!
+[TEST] Dattani-Chau Minimization
+>> from N = 25 through N = 80
+>> at N =   25: energy =   0, x =   5, y =   5
+>> at N =   27: energy =   0, x =   3, y =   9
+>> at N =   29: energy =   4, x =   3, y =   9
+>> at N =   31: energy =   4, x =   3, y =  11
+>> at N =   33: energy =   0, x =   3, y =  11
+>> at N =   35: energy =   0, x =   7, y =   5
+>> at N =   37: energy =   4, x =   7, y =   5
+>> at N =   39: energy =   0, x =   3, y =  13
+>> at N =   41: energy =   4, x =   3, y =  13
+>> at N =   43: energy =   4, x =   5, y =   9
+>> at N =   45: energy =   0, x =   5, y =   9
+>> at N =   47: energy =   4, x =   7, y =   7
+>> at N =   49: energy =   0, x =   7, y =   7
+>> at N =   51: energy =   0, x =   3, y =  17
+>> at N =   53: energy =   4, x =   5, y =  11
+>> at N =   55: energy =   0, x =   5, y =  11
+>> at N =   57: energy =   0, x =   3, y =  19
+>> at N =   59: energy =   4, x =   3, y =  19
+>> at N =   61: energy =   4, x =   7, y =   9
+>> at N =   63: energy =   0, x =   7, y =   9
+>> at N =   65: energy =   0, x =   5, y =  13
+>> at N =   67: energy =   4, x =   5, y =  13
+>> at N =   69: energy =   0, x =   3, y =  23
+>> at N =   71: energy =   4, x =   3, y =  23
+>> at N =   73: energy =   4, x =   5, y =  15
+>> at N =   75: energy =   0, x =   5, y =  15
+>> at N =   77: energy =   0, x =   7, y =  11
+>> at N =   79: energy =   4, x =   7, y =  11
+>> passed all!
+[TEST] Factored Values Evaluation
+>> from N = 25 through N = 1024
+>> at N =   33: energy =   0, x =   3, y =  11
+>> at N =   35: energy =   0, x =   5, y =   7
+>> at N =   39: energy =   0, x =   3, y =  13
+>> at N =   51: energy =   0, x =   3, y =  17
+>> at N =   55: energy =   0, x =   5, y =  11
+>> at N =   57: energy =   0, x =   3, y =  19
+>> at N =   65: energy =   0, x =   5, y =  13
+>> at N =   69: energy =   0, x =   3, y =  23
+>> at N =   77: energy =   0, x =   7, y =  11
+>> at N =   85: energy =   0, x =   5, y =  17
+>> at N =   87: energy =   0, x =   3, y =  29
+>> at N =   91: energy =   0, x =   7, y =  13
+>> at N =   93: energy =   0, x =   3, y =  31
+>> at N =   95: energy =   0, x =   5, y =  19
+>> at N =  111: energy =   0, x =   3, y =  37
+>> at N =  115: energy =   0, x =   5, y =  23
+>> at N =  119: energy =   0, x =   7, y =  17
+>> at N =  123: energy =   0, x =   3, y =  41
+>> at N =  129: energy =   0, x =   3, y =  43
+>> at N =  133: energy =   0, x =   7, y =  19
+>> at N =  141: energy =   0, x =   3, y =  47
+>> at N =  143: energy =   0, x =  11, y =  13
+>> at N =  145: energy =   0, x =   5, y =  29
+>> at N =  155: energy =   0, x =   5, y =  31
+>> at N =  159: energy =   0, x =   3, y =  53
+>> at N =  161: energy =   0, x =   7, y =  23
+>> at N =  177: energy =   0, x =   3, y =  59
+>> at N =  183: energy =   0, x =   3, y =  61
+>> at N =  185: energy =   0, x =   5, y =  37
+>> at N =  187: energy =   0, x =  11, y =  17
+>> at N =  201: energy =   0, x =   3, y =  67
+>> at N =  203: energy =   0, x =   7, y =  29
+>> at N =  205: energy =   0, x =   5, y =  41
+>> at N =  209: energy =   0, x =  11, y =  19
+>> at N =  213: energy =   0, x =   3, y =  71
+>> at N =  215: energy =   0, x =   5, y =  43
+>> at N =  217: energy =   0, x =   7, y =  31
+>> at N =  219: energy =   0, x =   3, y =  73
+>> at N =  221: energy =   0, x =  13, y =  17
+>> at N =  235: energy =   0, x =   5, y =  47
+>> at N =  237: energy =   0, x =   3, y =  79
+>> at N =  247: energy =   0, x =  13, y =  19
+>> at N =  249: energy =   0, x =   3, y =  83
+>> at N =  253: energy =   0, x =  11, y =  23
+>> at N =  259: energy =   0, x =   7, y =  37
+>> at N =  265: energy =   0, x =   5, y =  53
+>> at N =  267: energy =   0, x =   3, y =  89
+>> at N =  287: energy =   0, x =   7, y =  41
+>> at N =  291: energy =   0, x =   3, y =  97
+>> at N =  295: energy =   0, x =   5, y =  59
+>> at N =  299: energy =   0, x =  13, y =  23
+>> at N =  301: energy =   0, x =   7, y =  43
+>> at N =  303: energy =   0, x =   3, y = 101
+>> at N =  305: energy =   0, x =   5, y =  61
+>> at N =  309: energy =   0, x =   3, y = 103
+>> at N =  319: energy =   0, x =  11, y =  29
+>> at N =  321: energy =   0, x =   3, y = 107
+>> at N =  323: energy =   0, x =  17, y =  19
+>> at N =  327: energy =   0, x =   3, y = 109
+>> at N =  329: energy =   0, x =   7, y =  47
+>> at N =  335: energy =   0, x =   5, y =  67
+>> at N =  339: energy =   0, x =   3, y = 113
+>> at N =  341: energy =   0, x =  11, y =  31
+>> at N =  355: energy =   0, x =   5, y =  71
+>> at N =  365: energy =   0, x =   5, y =  73
+>> at N =  371: energy =   0, x =   7, y =  53
+>> at N =  377: energy =   0, x =  13, y =  29
+>> at N =  381: energy =   0, x =   3, y = 127
+>> at N =  391: energy =   0, x =  17, y =  23
+>> at N =  393: energy =   0, x =   3, y = 131
+>> at N =  395: energy =   0, x =   5, y =  79
+>> at N =  403: energy =   0, x =  13, y =  31
+>> at N =  407: energy =   0, x =  11, y =  37
+>> at N =  411: energy =   0, x =   3, y = 137
+>> at N =  413: energy =   0, x =   7, y =  59
+>> at N =  415: energy =   0, x =   5, y =  83
+>> at N =  417: energy =   0, x =   3, y = 139
+>> at N =  427: energy =   0, x =   7, y =  61
+>> at N =  437: energy =   0, x =  19, y =  23
+>> at N =  445: energy =   0, x =   5, y =  89
+>> at N =  447: energy =   0, x =   3, y = 149
+>> at N =  451: energy =   0, x =  11, y =  41
+>> at N =  453: energy =   0, x =   3, y = 151
+>> at N =  469: energy =   0, x =   7, y =  67
+>> at N =  471: energy =   0, x =   3, y = 157
+>> at N =  473: energy =   0, x =  11, y =  43
+>> at N =  481: energy =   0, x =  13, y =  37
+>> at N =  485: energy =   0, x =   5, y =  97
+>> at N =  489: energy =   0, x =   3, y = 163
+>> at N =  493: energy =   0, x =  17, y =  29
+>> at N =  497: energy =   0, x =   7, y =  71
+>> at N =  501: energy =   0, x =   3, y = 167
+>> at N =  505: energy =   0, x =   5, y = 101
+>> at N =  511: energy =   0, x =   7, y =  73
+>> at N =  515: energy =   0, x =   5, y = 103
+>> at N =  517: energy =   0, x =  11, y =  47
+>> at N =  519: energy =   0, x =   3, y = 173
+>> at N =  527: energy =   0, x =  17, y =  31
+>> at N =  533: energy =   0, x =  13, y =  41
+>> at N =  535: energy =   0, x =   5, y = 107
+>> at N =  537: energy =   0, x =   3, y = 179
+>> at N =  543: energy =   0, x =   3, y = 181
+>> at N =  545: energy =   0, x =   5, y = 109
+>> at N =  551: energy =   0, x =  19, y =  29
+>> at N =  553: energy =   0, x =   7, y =  79
+>> at N =  559: energy =   0, x =  13, y =  43
+>> at N =  565: energy =   0, x =   5, y = 113
+>> at N =  573: energy =   0, x =   3, y = 191
+>> at N =  579: energy =   0, x =   3, y = 193
+>> at N =  581: energy =   0, x =   7, y =  83
+>> at N =  583: energy =   0, x =  11, y =  53
+>> at N =  589: energy =   0, x =  19, y =  31
+>> at N =  591: energy =   0, x =   3, y = 197
+>> at N =  597: energy =   0, x =   3, y = 199
+>> at N =  611: energy =   0, x =  13, y =  47
+>> at N =  623: energy =   0, x =   7, y =  89
+>> at N =  629: energy =   0, x =  17, y =  37
+>> at N =  633: energy =   0, x =   3, y = 211
+>> at N =  635: energy =   0, x =   5, y = 127
+>> at N =  649: energy =   0, x =  11, y =  59
+>> at N =  655: energy =   0, x =   5, y = 131
+>> at N =  667: energy =   0, x =  23, y =  29
+>> at N =  669: energy =   0, x =   3, y = 223
+>> at N =  671: energy =   0, x =  11, y =  61
+>> at N =  679: energy =   0, x =   7, y =  97
+>> at N =  681: energy =   0, x =   3, y = 227
+>> at N =  685: energy =   0, x =   5, y = 137
+>> at N =  687: energy =   0, x =   3, y = 229
+>> at N =  689: energy =   0, x =  13, y =  53
+>> at N =  695: energy =   0, x =   5, y = 139
+>> at N =  697: energy =   0, x =  17, y =  41
+>> at N =  699: energy =   0, x =   3, y = 233
+>> at N =  703: energy =   0, x =  19, y =  37
+>> at N =  707: energy =   0, x =   7, y = 101
+>> at N =  713: energy =   0, x =  23, y =  31
+>> at N =  717: energy =   0, x =   3, y = 239
+>> at N =  721: energy =   0, x =   7, y = 103
+>> at N =  723: energy =   0, x =   3, y = 241
+>> at N =  731: energy =   0, x =  17, y =  43
+>> at N =  737: energy =   0, x =  11, y =  67
+>> at N =  745: energy =   0, x =   5, y = 149
+>> at N =  749: energy =   0, x =   7, y = 107
+>> at N =  753: energy =   0, x =   3, y = 251
+>> at N =  755: energy =   0, x =   5, y = 151
+>> at N =  763: energy =   0, x =   7, y = 109
+>> at N =  767: energy =   0, x =  13, y =  59
+>> at N =  771: energy =   0, x =   3, y = 257
+>> at N =  779: energy =   0, x =  19, y =  41
+>> at N =  781: energy =   0, x =  11, y =  71
+>> at N =  785: energy =   0, x =   5, y = 157
+>> at N =  789: energy =   0, x =   3, y = 263
+>> at N =  791: energy =   0, x =   7, y = 113
+>> at N =  793: energy =   0, x =  13, y =  61
+>> at N =  799: energy =   0, x =  17, y =  47
+>> at N =  803: energy =   0, x =  11, y =  73
+>> at N =  807: energy =   0, x =   3, y = 269
+>> at N =  813: energy =   0, x =   3, y = 271
+>> at N =  815: energy =   0, x =   5, y = 163
+>> at N =  817: energy =   0, x =  19, y =  43
+>> at N =  831: energy =   0, x =   3, y = 277
+>> at N =  835: energy =   0, x =   5, y = 167
+>> at N =  843: energy =   0, x =   3, y = 281
+>> at N =  849: energy =   0, x =   3, y = 283
+>> at N =  851: energy =   0, x =  23, y =  37
+>> at N =  865: energy =   0, x =   5, y = 173
+>> at N =  869: energy =   0, x =  11, y =  79
+>> at N =  871: energy =   0, x =  13, y =  67
+>> at N =  879: energy =   0, x =   3, y = 293
+>> at N =  889: energy =   0, x =   7, y = 127
+>> at N =  893: energy =   0, x =  19, y =  47
+>> at N =  895: energy =   0, x =   5, y = 179
+>> at N =  899: energy =   0, x =  29, y =  31
+>> at N =  901: energy =   0, x =  17, y =  53
+>> at N =  905: energy =   0, x =   5, y = 181
+>> at N =  913: energy =   0, x =  11, y =  83
+>> at N =  917: energy =   0, x =   7, y = 131
+>> at N =  921: energy =   0, x =   3, y = 307
+>> at N =  923: energy =   0, x =  13, y =  71
+>> at N =  933: energy =   0, x =   3, y = 311
+>> at N =  939: energy =   0, x =   3, y = 313
+>> at N =  943: energy =   0, x =  23, y =  41
+>> at N =  949: energy =   0, x =  13, y =  73
+>> at N =  951: energy =   0, x =   3, y = 317
+>> at N =  955: energy =   0, x =   5, y = 191
+>> at N =  959: energy =   0, x =   7, y = 137
+>> at N =  965: energy =   0, x =   5, y = 193
+>> at N =  973: energy =   0, x =   7, y = 139
+>> at N =  979: energy =   0, x =  11, y =  89
+>> at N =  985: energy =   0, x =   5, y = 197
+>> at N =  989: energy =   0, x =  23, y =  43
+>> at N =  993: energy =   0, x =   3, y = 331
+>> at N =  995: energy =   0, x =   5, y = 199
+>> at N = 1003: energy =   0, x =  17, y =  59
+>> at N = 1007: energy =   0, x =  19, y =  53
+>> at N = 1011: energy =   0, x =   3, y = 337
+>> passed all!
+[TEST] Factored Values Evaluation with Ishikawa Minimization
+>> from N = 25 through N = 80
+>> at N =   33: energy =   0, x =   3, y =  11
+>> at N =   35: energy =   0, x =   5, y =   7
+>> at N =   39: energy =   0, x =   3, y =  13
+>> at N =   51: energy =   0, x =   3, y =  17
+>> at N =   55: energy =   0, x =   5, y =  11
+>> at N =   57: energy =   0, x =   3, y =  19
+>> at N =   65: energy =   0, x =   5, y =  13
+>> at N =   69: energy =   0, x =   3, y =  23
+>> at N =   77: energy =   0, x =   7, y =  11
+>> passed all!
+[TEST] Factored Values Evaluation with Dattani Minimization
+>> from N = 25 through N = 95
+>> at N =   33: energy =   0, x =   3, y =  11
+>> at N =   35: energy =   0, x =   5, y =   7
+>> at N =   39: energy =   0, x =   3, y =  13
+>> at N =   51: energy =   0, x =   3, y =  17
+>> at N =   55: energy =   0, x =   5, y =  11
+>> at N =   57: energy =   0, x =   3, y =  19
+>> at N =   65: energy =   0, x =   5, y =  13
+>> at N =   69: energy =   0, x =   3, y =  23
+>> at N =   77: energy =   0, x =   7, y =  11
+>> at N =   85: energy =   0, x =   5, y =  17
+>> at N =   87: energy =   0, x =   3, y =  29
+>> at N =   91: energy =   0, x =   7, y =  13
+>> at N =   93: energy =   0, x =   3, y =  31
+>> passed all!

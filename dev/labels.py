@@ -1,0 +1,7 @@
+TEST_0 = "[TEST] {0}"
+PASSED_ALL = ">> passed all!"
+ERROR_AT_N_0 = ">> error at N = {0:4d}"
+PASSED_FOR_N_0 = ">> passed for N = {0:4d}"
+FROM_0_THROUGH_1 = ">> from N = {0} through N = {1}"
+AT_N_0_ENERGY_1_X_2_Y_3 = ">> at N = {0:4d}: energy = {1:3d}, x = {2:3d}, y = {3:3d}"
+ERROR_AT_N_0_EXPECTED_1_BUT_WAS_2 = ">> error at N = {0:4d}: expected {1} but was {2}"
